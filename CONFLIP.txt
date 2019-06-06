@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+#define ll long long int
+using namespace  std;
+int main(){
+int t,a,i,q;
+cin>>t;
+ll b,g,n;
+for(a=1;a<=t;a++){
+    cin>>g;
+    for(b=1;b<=g;b++){
+        cin>>i>>n>>q;
+        if(n%2!=0){
+            if(i==q){
+                cout<<n/2<<endl;
+            }
+            else{
+                cout<<(n/2)+1<<endl;
+            }
+        }
+        else{
+            cout<<(n/2)<<endl;
+        }
+    }
+}
+}
