@@ -1,0 +1,24 @@
+#include<bits/stdc++.h>
+#include <algorithm>
+#define ll long long int
+using namespace std;
+int main()
+{
+int t,i;
+long long n,j;
+ll c,d,s;
+cin>>t;
+for(i=1;i<=t;i++)
+{
+cin>>n;
+ll arr[n];
+for(j=0;j<n;j++)
+{
+cin>>arr[j];
+}
+ll* i1;
+    i1 = std::max_element(arr, arr + n);
+    cin>>c>>d>>s;
+    cout<<((c-1)*(*i1))<<endl;
+    }
+    return 0;}
