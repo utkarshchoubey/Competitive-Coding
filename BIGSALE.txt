@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+#include<limits>
+using namespace std;
+int main()
+{
+ int t;
+ double price,quantity,discount ,p=0,u=0,loss=0;
+ long long int n;
+    cin>>t;
+    for(int i=1;i<=t;i++)
+        {
+            cin>>n;
+            for(long long int j=1;j<=n;j++)
+            {
+                cin>>price>>quantity>>discount;
+                p=price+((discount)*price*(0.01));
+                u=p-((discount)*p*(0.01));
+                loss+=(price-u)*quantity;
+                    p=0;u=0;
+            }
+      
+            cout.precision(10);
+            cout<<fixed<<loss<<endl;
+            loss=0;
+
+        } return 0;
+}
