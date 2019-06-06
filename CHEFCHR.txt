@@ -1,0 +1,37 @@
+#include<bits/stdc++.h>
+#include<algorithm>
+#include<string>
+#define ll long long
+using namespace std;
+int main()
+{
+    ll t,i,j,c=0,n;
+    string str,s1;
+    cin>>t;
+    for(i=1;i<=t;i++)
+    {
+        c=0;
+        cin>>str;
+        n=str.length();
+        for(j=0;j<n;j++)
+        {
+
+            s1=str.substr(j,4);
+
+
+            std::sort(s1.begin(),s1.end());
+            if(s1=="cefh")
+            {
+                c++;
+            }
+
+        }
+        if(c>0)
+            cout<<"lovely "<<c<<endl;
+        else
+            cout<<"normal"<<endl;
+
+
+    }
+    return 0;
+}
