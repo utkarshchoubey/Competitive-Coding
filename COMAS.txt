@@ -1,0 +1,80 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std;
+int main(){
+ll i,j,n,c,t,p,q,k,suma,boy,girl,a1,a2,a3,b1,b2,b3;
+cin>>t;
+for(i=1;i<=t;i++){
+cin>>n;
+int arr[n]={0};
+for(k=1;k<=(n/2)+1;k++){
+c=0;suma=0;
+for(j=0;j<n;j++){
+    if(arr[j]==0){
+        suma++;
+    }
+}
+if(suma<=3){break;}
+cout<<"? ";
+for(j=0;j<n;j++){
+ if(arr[j]==0 && c<5){
+    cout<<j+1<<" ";
+    c++;
+ }
+ if(c==5){break;}
+}
+if(c<5){
+    for(j=0;j<n;j++){
+ if(arr[j]==1 && c<5){
+    cout<<j+1<<" ";
+    c++;
+ }
+ if(c==5){break;}
+}
+}
+if(c==5){
+    cout<<endl;
+    cin>>p>>q;
+    arr[p-1]=1;
+    arr[q-1]=1;
+}
+}
+ll brr[3]={0};
+boy=0;
+for(j=0;j<n;j++){
+    if(arr[j]==0 && boy<3){
+        brr[boy]=(j+1);
+        boy++;
+    }
+    if(boy==3){break;}
+}
+ll crr[3]={0};
+girl=0;
+for(j=0;j<n;j++){
+    if(arr[j]==1 && girl<3){
+        crr[girl]=(j+1);
+        girl++;
+    }
+    if(girl==3){break;}
+}
+        cout<<"? "<<brr[0]<<" "<<brr[1]<<" "<<crr[2]<<" "<<crr[0]<<" "<<crr[1]<<endl;
+        cin>>a1>>b1;
+        cout<<"? "<<brr[1]<<" "<<brr[2]<<" "<<crr[2]<<" "<<crr[0]<<" "<<crr[1]<<endl;
+        cin>>a2>>b2;
+        cout<<"? "<<brr[0]<<" "<<brr[2]<<" "<<crr[2]<<" "<<crr[0]<<" "<<crr[1]<<endl;
+        cin>>a3>>b3;
+        if((a1!=a2&&a2==a3)&&(b1!=b2&&b2==b3)){
+            cout<<"! "<<brr[2]<<endl;
+        }
+       else if((a1!=a2&&a1==a3)&&(b1!=b2&&b1==b3)){
+            cout<<"! "<<brr[0]<<endl;
+        }
+         else{
+            cout<<"! "<<brr[1]<<endl;
+        }
+
+
+
+}
+return 0;
+}
