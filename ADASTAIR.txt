@@ -1,0 +1,26 @@
+#include <iostream>
+#define ll long long int
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{   ll t,i,j,n,c,sum=0,d,k,r,s;
+    cin>>t;
+    for(i=1;i<=t;i++)
+    {
+        cin>>n>>k;
+        ll arr[n];
+        for(j=0;j<n;j++){
+            cin>>arr[j];
+        }
+        ll c=(arr[0]-1)/k;
+        for(j=0;j<n-1;j++){
+            r=arr[j];
+            s=arr[j+1];
+            sum=s-r-1;
+            c=c+sum/k;
+
+         }
+         cout<<c<<endl;
+    }
+    return 0;
+}
