@@ -1,39 +1,39 @@
-#include <bits/stdc++.h>
-#define ll long long int
+#include<bits/stdc++.h>
+#define ll long log
 using namespace std;
-int NumDigits(int x)
+int binarySearch(long long int arr[], int l, int r, long long int x)
 {
-    x = abs(x);
-    return (x < 10 ? 1 :
-        (x < 100 ? 2 :
-        (x < 1000 ? 3 :
-        (x < 10000 ? 4 :
-        (x < 100000 ? 5 :
-        (x < 1000000 ? 6 :
-        (x < 10000000 ? 7 :
-        (x < 100000000 ? 8 :
-        (x < 1000000000 ? 9 :
-        10)))))))));
+    while (l <= r) {
+        int m = l + (r - l) / 2;
+
+        // Check if x is present at mid
+        if (arr[m] == x)
+            return m;
+
+        // If x greater, ignore left half
+        if (arr[m] < x)
+            l = m + 1;
+
+        // If x is smaller, ignore right half
+        else
+            r = m - 1;
+    }
+    return -1;
 }
 int main(){
-ll t,i,n,sum,j;
+int t,n,i,j;
+long long int a,k;
 cin>>t;
 for(i=1;i<=t;i++){
     cin>>n;
-    sum=0;
-    if(n>=5 && n<10){
-        cout<<"1"<<endl;
+    long  long int arr[n];
+    for(j=0;j<n;j++){
+        cin>>arr[j];
     }
-    else if(n<5){
-        cout<<sum<<endl;
-    }
-    else{
-    for(j=1;j<=NumDigits(n)+4;j++){
-            if(n/pow(5,j) > 0)
-            sum += n/(pow(5,j));
-    }
-    cout<<sum<<endl;
-    }
+    cin>>k;
+     a = arr[k-1];
+    sort(arr,arr+n);
+    cout<<binarySearch(arr,0,n-1,a)+1<<endl;
+
 }
-return 0;
 }
