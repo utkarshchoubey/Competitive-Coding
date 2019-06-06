@@ -1,0 +1,17 @@
+#include <iostream>
+#define ll long long
+using namespace std;
+
+int main()
+{
+   ll p1,p2,i,k,t;
+   cin>>t;
+   for(i=1;i<=t;i++){
+    cin>>p1>>p2>>k;
+    if((p1+p2)/k%2==0)
+    cout<<"CHEF"<<endl;
+    else
+        cout<<"COOK"<<endl;
+   }
+    return 0;
+}
