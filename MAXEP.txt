@@ -1,0 +1,85 @@
+#include <iostream>
+#define ll long long
+using namespace std;
+int main()
+{
+    ll n,c,cn=1000,cur,ap,bp,t;
+    cin>>n>>c;
+    cout<<1<<" "<<1<<endl;
+    cin>>t;
+   if(t==1){
+        cn-=c;
+        cout<<2<<endl;
+        cout<<3<<" "<<1<<endl;
+    }
+  else{
+      cur=400;
+    while(cur<=n){
+        cout<<"1"<<" "<<cur<<endl;
+        cin>>t;
+    if(t==1){
+        cn-=c;
+        cout<<"2"<<" "<<endl;
+        break;
+    }
+    if(t==0){
+    cn-=1;
+    if((cur+400)>n){
+        cur=n;
+        break;
+    }
+    else{
+    cur+=400;
+    }
+    }
+    if(t==-1)
+    {
+    break;
+    }
+
+    }
+    ap=cur-400+40;
+    while(ap<=cur){
+        cout<<"1"<<" "<<ap<<endl;
+        cin>>t;
+    if(t==1){
+        cn-=c;
+        cout<<"2"<<" "<<endl;
+        break;
+    }
+    if(t==0){
+        cn-=1;
+        if((ap+40)>n){
+        ap=n;
+        break;
+    }
+    else{
+    ap+=40;
+    }
+    }
+     if(t==-1)
+    {
+    break;
+    }
+    }
+    bp=ap-40+1;
+    while(bp<=ap){
+    cout<<"1"<<" "<<bp<<endl;
+    cin>>t;
+    if(t==1){
+        cn-=c;
+        cout<<"2"<<" "<<endl;
+        break;
+    }
+    if(t==0){
+        cn-=1;
+        bp+=1;
+    }
+     if(t==-1)
+    {
+    break;
+    }
+    }
+    cout<<"3"<<" "<<bp<<endl;
+    return 0;
+}}
