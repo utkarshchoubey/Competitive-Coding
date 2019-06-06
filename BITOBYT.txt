@@ -1,0 +1,42 @@
+#include <iostream>
+#include<math.h>
+#define ll long long
+using namespace std;
+int main()
+{
+   ll n,i,k,a,b,c,t;
+   cin>>t;
+   for(i=1;i<=t;i++){
+    cin>>n;
+    k=n/26;
+    n=n-k*26;
+    if(n>=11)
+    {
+        c=pow(2,k);
+        b=0;
+        a=0;
+        cout<<a<<" "<<b<<" "<<c<<endl;
+    }
+    if(n>=3 && n<11)
+    {
+        b=pow(2,k);
+        c=0;
+        a=0;
+        cout<<a<<" "<<b<<" "<<c<<endl;
+    }
+    if(n<3 && n!=0){
+        b=0;
+        c=0;
+        a=pow(2,k);
+        cout<<a<<" "<<b<<" "<<c<<endl;
+    }
+    if(n==0)
+    {
+          b=0;
+        c=pow(2,k-1);
+        a=0;
+        cout<<a<<" "<<b<<" "<<c<<endl;
+    }
+    }
+    return 0;
+}
