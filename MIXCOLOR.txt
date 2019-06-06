@@ -1,0 +1,31 @@
+#include<bits/stdc++.h>
+#include<iostream>
+#include<vector>
+#include<set>
+#define ll long long int
+using namespace std;
+int main()
+{
+    int t;
+    ll n;
+    cin>>t;
+    for(int i=1;i<=t;i++)
+    {
+        cin>>n;
+        vector <long long> ar(n);
+        for(ll j=0;j<n;j++)
+        {
+            cin>>ar[j];
+
+        }
+       ll u=set<long long>( ar.begin(), ar.end() ).size();
+        cout<<(n-u)<<endl;
+
+    }
+    return 0;
+
+
+
+    }
+
+
