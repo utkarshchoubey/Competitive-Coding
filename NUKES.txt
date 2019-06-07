@@ -1,0 +1,21 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    long long int a,n,k,temp,res;
+    cin>>a>>n>>k;
+    temp=a;
+    long long int r[k+1];
+    for(long long int i=1;i<=k;i++)
+        r[i]=0;
+    for(long long int i=1;i<=k;i++)
+    {
+        r[i]=temp%(n+1);
+        temp=temp/(n+1);
+    }
+    for(long long int i=1;i<=k;i++)
+    {
+        cout<<r[i]<<" ";
+    }
+
+}
