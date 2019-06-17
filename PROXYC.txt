@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+#define ll long long int
+using namespace std;
+int main(){
+int t,i,d,pro=0,j;
+cin>>t;
+for(j=1;j<=t;j++){
+cin>>d;
+string str,abc;
+cin>>str;
+abc=str;
+pro=0;
+for(i=2;i<d-2;i++){
+    double xy = (double)count(abc.begin(), abc.end(), 'P')/d;
+    if( xy < (.75)){
+     if(abc[i]=='A'){
+        if((str[i-1]=='P' || str[i-2]=='P')&&(str[i+1]=='P'|| str[i+2]=='P')){
+            abc[i]='P';
+            pro+=1;
+        }
+    }
+    }
+}
+double zx = (double)count(abc.begin(), abc.end(),'P')/d;
+ if( zx >= (.75)){
+    cout<<pro<<endl;
+ }
+ else{
+    cout<<"-1"<<endl;
+ }
+}
+return 0;
+}
