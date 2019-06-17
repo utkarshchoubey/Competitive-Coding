@@ -1,0 +1,54 @@
+#include<bits/stdc++.h>
+#define ll long long int
+using namespace std;
+ll gcd(ll a, ll b)
+{
+    if (a == 0)
+        return b;
+    return gcd(b % a, a);
+}
+ll findGCD(vector<ll> &arr, ll n)
+{
+    ll result = arr[0];
+    for (ll i = 1; i < n; i++)
+        result = gcd(arr[i], result);
+
+    return result;
+}
+int main(){
+int t,i;
+ll n,j,last,last_2,sum1,k,q,ab1,ab2;
+cin>>t;
+for(i=1;i<=t;i++){
+    cin>>n;
+    vector<ll> arr;
+    for(j=0;j<n;j++){
+    cin>>q;
+    arr.push_back(q);
+    }
+    sort(arr.begin(),arr.end());
+    vector<ll>::iterator ip;
+    ip = std::unique(arr.begin(), arr.begin() + n);
+    arr.resize(std::distance(arr.begin(), ip));
+    if(arr.size()== 1){
+        cout<<2*(arr.back())<<endl;
+    }
+    else{
+    last=arr.back();
+    arr.pop_back();
+    last_2=arr.back();
+    arr.pop_back();
+    ll sz = arr.size();
+    sum1=findGCD(arr,sz);
+    ab1=gcd(sum1,last_2);
+    ab2=gcd(sum1,last);
+    if((ab1 + last)> (ab2 + last_2)){
+        cout<<ab1+last<<endl;
+    }
+    else{
+        cout<<ab2+last_2<<endl;
+    }
+    }
+}
+return 0;
+}
