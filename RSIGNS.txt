@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+#define ll long long int
+using namespace  std;
+ll power(ll x, unsigned ll y, ll p)
+{
+ll res = 1;
+x = x % p;
+while (y > 0)
+{
+if (y & 1)
+res = (res*x) % p;
+y = y>>1;
+x = (x*x) % p;
+}
+return res;
+}
+int main(){
+ll t,i,k;
+cin>>t;
+for(i=1;i<=t;i++){
+cin>>k;
+cout<<(5*power(2,k,1000000007)%1000000007)<<endl;
+}
+return 0;
+}
