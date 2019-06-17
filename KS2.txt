@@ -1,0 +1,21 @@
+#include<bits/stdc++.h>
+#define ll long long int
+using namespace std;
+int main(){
+int t,i,n,j,sum=0;
+string str;
+cin>>t;
+for(i=1;i<=t;i++){
+    sum=0;
+    cin>>str;
+    n=str.length();
+    for(j=0;j<n;j++){
+        sum+=(str[j]-'0');
+    }
+    int bc=0;
+    if(sum%10!=0)
+       bc=(10-(sum%10));
+    cout<<str<<bc<<endl;
+}
+return 0;
+}
