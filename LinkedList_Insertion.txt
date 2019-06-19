@@ -1,0 +1,62 @@
+#include<bits/stdc++.h>
+using namespace std;
+struct Node{
+int data;
+struct Node *Next;
+};
+void push(struct Node **head_ref, int new_data){
+struct Node *new_node = (struct Node*)malloc(sizeof(struct Node));
+new_node->data = new_data;
+new_node->Next = (*head_ref);
+*head_ref = new_node;
+}
+void insertAfter(Node* prev_node, int new_data)
+{
+    if (prev_node == NULL)
+    {
+        cout<<"the given previous node cannot be NULL";
+        return;
+    }
+    Node* new_node = new Node();
+    new_node->data = new_data;
+    new_node->Next = prev_node->Next;
+    prev_node->Next = new_node;
+}
+void append(struct Node **head_ref , int new_data){
+struct Node *new_node = (struct Node*)malloc(sizeof(struct Node));
+Node *Last = *head_ref;
+    new_node->data = new_data;
+    new_node->Next = NULL;
+        if (*head_ref == NULL)
+    {
+        *head_ref = new_node;
+        return;
+    }
+    while (Last->Next != NULL)
+        Last = Last->Next;
+    Last->Next = new_node;
+    return;
+}
+
+void printList(Node *node)
+{
+    while (node != NULL)
+    {
+        cout<<" "<<node->data;
+        node = node->Next;
+    }
+}
+int main(){
+        Node* head = NULL;
+    push(&head, 7);
+    push(&head, 1);
+    push(&head, 4);
+    insertAfter(head, 7);
+    append(&head, 4);
+
+    cout<<"Created Linked list is: ";
+    printList(head);
+
+    return 0;
+
+}
